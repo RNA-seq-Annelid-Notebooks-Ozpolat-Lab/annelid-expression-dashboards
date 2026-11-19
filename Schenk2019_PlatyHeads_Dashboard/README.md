@@ -2,7 +2,7 @@
 
 Interactive gene-expression explorer for the head-maturation transcriptome from:
 
-> Schenk, S. et al. (2019). *eLife*. https://doi.org/10.7554/eLife.45530
+> Schenk, S. et al. (2019). *eLife*. https://doi.org/10.7554/eLife.41556
 
 **Authors:** Alina Krawczynski, Rannyele Passos Ribeiro (built with assistance from Claude)
 
@@ -127,7 +127,8 @@ See the Methods section of Schenk et al. 2019 for the exact normalization proced
 ## BLAST sequence search (optional)
 
 The notebook has an optional cell that lets you paste a nucleotide sequence and find the matching
-transcript in the study's own **HAMN01** transcriptome assembly. **Everything else in the
+transcript in the study's own **HALR01** transcriptome assembly (ENA TSA accession `HALR01`,
+which contains every gene ID in Data 13). **Everything else in the
 dashboard works without this**. If BLAST isn't set up, that one cell just prints a short
 reminder and nothing else is affected.
 
@@ -140,13 +141,18 @@ To enable it:
    - The notebook finds BLAST+ automatically as long as it's on your system `PATH` (the installers
      and conda both do this for you). If it's somewhere unusual, set `BLAST_BIN_DIR` at the top of
      the BLAST code cell to the folder containing the executables.
-2. **Build the search database once.** The exact commands (download the HAMN01 FASTA, rewrite its
-   headers, run `makeblastdb`) are in the comment at the top of the BLAST code cell. Put the
-   resulting database files in a folder called **`blast_db/`** next to the notebook. That's where
-   the notebook looks by default.
+2. **Get the search database** (it's too large to keep in the repository itself). Choose one:
+   - **Download it ready-made (easiest):** download `schenk2019_blast_db.zip` from this repository's
+     [BLAST databases release](https://github.com/a-krawczynski/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It creates the
+     **`blast_db/`** folder the notebook looks for.
+   - **Build it yourself:** download the study's assembled transcriptome from ENA (TSA accession
+     [`HALR01`](https://www.ebi.ac.uk/ena/browser/view/HALR01); direct link: <https://ftp.ebi.ac.uk/pub/databases/ena/tsa/public/hal/HALR01.fasta.gz>), unzip it,
+     then run the commands in the comment at the top of the BLAST code cell (rewrite the FASTA
+     headers, run `makeblastdb`). Put the resulting files in a folder called **`blast_db/`** next
+     to the notebook.
 
 ## Citation
 
 If you use this dashboard, please cite the original paper:
 
-> Schenk, S. et al. (2019). eLife. https://doi.org/10.7554/eLife.45530
+> Schenk, S. et al. (2019). eLife. https://doi.org/10.7554/eLife.41556

@@ -128,8 +128,8 @@ DE-testing pipeline; see the paper's Methods for that procedure.
 ## BLAST sequence search (optional)
 
 The notebook has an optional cell that lets you paste a nucleotide sequence and find the matching
-transcript in the **HAMN01** reference transcriptome (the assembly this dashboard's
-transcriptome-mapped gene IDs were generated against). **Everything else in the dashboard works
+transcript in the **HALR01** reference transcriptome (ENA TSA accession `HALR01`; 99.8% of this
+dashboard's transcriptome-mapped gene IDs are in it, and the rest are entries flagged `_contamination`). **Everything else in the dashboard works
 without this**: if BLAST isn't set up, that one cell just prints a short reminder and nothing
 else is affected.
 
@@ -142,10 +142,15 @@ To enable it:
    - The notebook finds BLAST+ automatically as long as it's on your system `PATH` (the installers
      and conda both do this for you). If it's somewhere unusual, set `BLAST_BIN_DIR` at the top of
      the BLAST code cell to the folder containing the executables.
-2. **Build the search database once.** The exact commands (download the HAMN01 FASTA, rewrite its
-   headers, run `makeblastdb`) are in the comment at the top of the BLAST code cell. Put the
-   resulting database files in a folder called **`blast_db/`** next to the notebook; that's where
-   the notebook looks by default.
+2. **Get the search database** (it's too large to keep in the repository itself). Choose one:
+   - **Download it ready-made (easiest):** download `andreatta2026_blast_db.zip` from this
+     repository's [BLAST databases release](https://github.com/a-krawczynski/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It
+     creates the **`blast_db/`** folder the notebook looks for.
+   - **Build it yourself:** download the transcriptome from ENA (TSA accession
+     [`HALR01`](https://www.ebi.ac.uk/ena/browser/view/HALR01); direct link: <https://ftp.ebi.ac.uk/pub/databases/ena/tsa/public/hal/HALR01.fasta.gz>), unzip it,
+     then run the commands in the comment at the top of the BLAST code cell (rewrite the FASTA
+     headers, run `makeblastdb`). Put the resulting files in a folder called **`blast_db/`** next
+     to the notebook.
 
 Note this only covers transcriptome-mapped (`comp..._c#_seq#`) genes. Genome-mapped (`XLOC_...`)
 genes aren't searchable this way, since no matching genome reference sequence is available.
