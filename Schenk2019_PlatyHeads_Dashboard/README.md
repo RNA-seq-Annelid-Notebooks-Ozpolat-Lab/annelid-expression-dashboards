@@ -143,7 +143,7 @@ To enable it:
      the BLAST code cell to the folder containing the executables.
 2. **Get the search database** (it's too large to keep in the repository itself). Choose one:
    - **Download it ready-made (easiest):** download `schenk2019_blast_db.zip` from this repository's
-     [BLAST databases release](https://github.com/a-krawczynski/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It creates the
+     [BLAST databases release](https://github.com/RNA-seq-Annelid-Notebooks-Ozpolat-Lab/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It creates the
      **`blast_db/`** folder the notebook looks for.
    - **Build it yourself:** download the study's assembled transcriptome from ENA (TSA accession
      [`HALR01`](https://www.ebi.ac.uk/ena/browser/view/HALR01); direct link: <https://ftp.ebi.ac.uk/pub/databases/ena/tsa/public/hal/HALR01.fasta.gz>), unzip it,

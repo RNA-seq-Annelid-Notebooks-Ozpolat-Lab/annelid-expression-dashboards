@@ -158,7 +158,7 @@ To enable it:
 2. **Get the two search databases** (one per species; they're too large to keep in the repository
    itself). Choose one:
    - **Download them ready-made (easiest):** download `ribeiro2019_blast_db.zip` from this
-     repository's [BLAST databases release](https://github.com/a-krawczynski/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It
+     repository's [BLAST databases release](https://github.com/RNA-seq-Annelid-Notebooks-Ozpolat-Lab/annelid-expression-dashboards/releases/tag/blast-databases-v1) and unzip it inside this dashboard folder. It
      creates the **`blast_db/`** folder the notebook looks for.
    - **Build them yourself:** the two Trinity assemblies are published as `.rar` archives at
      <https://github.com/rannypribeiro/Regeneration_transcriptomics> (extract them with 7-Zip, The Unarchiver or similar). Then run the commands in the
